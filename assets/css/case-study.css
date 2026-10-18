@@ -1,0 +1,16 @@
+/* Cole Inniss portfolio — case-study page only */
+.wave-rule{position:relative}
+.wave-rule .wave-divider{top:-3px}
+.hl{background-color:rgba(162,250,75,0.25);padding-bottom:9px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@keyframes hl-wave{from{background-position:0 100%}to{background-position:40px 100%}}
+.title-sweep{-webkit-user-drag:none;text-decoration:none;padding-bottom:9px;background-image:linear-gradient(rgba(162,250,75,0.25),rgba(162,250,75,0.25));background-repeat:no-repeat;background-position:0 0;background-size:0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 560ms cubic-bezier(.22,.8,.25,1)}
+.title-sweep:hover,.title-sweep:focus-visible{background-size:100% 100%;color:#1A1A1A}
+.title-sweep:focus-visible{outline:2px solid #356506;outline-offset:4px}
+@media (prefers-reduced-motion: reduce){.hl{animation:none}.title-sweep{transition:none}}
+.page-root{animation:page-fade-in 800ms ease backwards;transition:opacity 650ms ease}
+.page-shift{animation:page-shift-in 1000ms cubic-bezier(.2,.8,.2,1) backwards;transition:transform 700ms cubic-bezier(.45,0,.2,1)}
+main.page-shift{animation-delay:90ms}
+footer.page-shift{animation-delay:160ms}
+@keyframes page-shift-in{from{transform:translateY(32px)}to{transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){.page-shift{animation:none;transition:none}.page-root.is-leaving .page-shift{transform:none}.page-root{animation-duration:200ms;transition-duration:200ms}}
+@media (prefers-reduced-motion: reduce){.sel-wave{animation:none}.tc-body,.tc-wing-a,.tc-wing-b,.toucan-cursor.is-perched .tc-body{animation:none}.toucan-cursor.is-landing{transition:opacity 150ms ease}}

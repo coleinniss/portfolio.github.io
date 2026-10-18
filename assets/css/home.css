@@ -1,0 +1,47 @@
+/* Cole Inniss portfolio — home page only */
+.tagline{background-color:rgba(162,250,75,0.25);padding-bottom:9px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@keyframes tagline-wave{from{background-position:0 100%}to{background-position:40px 100%}}
+.tw{display:inline-block;overflow:hidden;vertical-align:top}
+.tw-inner{display:inline-block;will-change:transform}
+.tw-inner.in-a{animation:tw-in-a 520ms cubic-bezier(.2,.8,.2,1) both}
+.tw-inner.in-b{animation:tw-in-b 520ms cubic-bezier(.2,.8,.2,1) both}
+.tw-inner.out{animation:tw-out 380ms cubic-bezier(.5,0,.75,0) both}
+@keyframes tw-in-a{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes tw-in-b{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes tw-out{from{transform:translateY(0)}to{transform:translateY(-105%)}}
+@media (prefers-reduced-motion: reduce){.tw-inner.in-a,.tw-inner.in-b,.tw-inner.out{animation:none}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion: reduce){.tagline{animation:none}}
+.about-more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 560ms cubic-bezier(.22,.8,.25,1),opacity 420ms ease}
+.about-more.is-open{grid-template-rows:1fr;opacity:1;transition:grid-template-rows 560ms cubic-bezier(.22,.8,.25,1),opacity 520ms ease 120ms}
+.about-more-inner{overflow:hidden;min-height:0}
+.about-caret{flex:0 0 auto;transform:rotate(0deg);transition:transform 460ms cubic-bezier(.22,.8,.25,1)}
+.about-toggle.is-open .about-caret{transform:rotate(90deg)}
+.about-toggle:hover .about-caret{transform:translateX(2px)}
+.about-toggle.is-open:hover .about-caret{transform:rotate(90deg) translateX(2px)}
+.about-toggle-label{transition:opacity 220ms ease}
+.about-toggle{border:1.5px solid #356506;border-radius:6px;padding-left:16px !important;padding-right:16px !important;margin-left:0 !important;background-color:transparent;transition:background-color 280ms ease}
+.about-toggle:hover,.about-toggle:focus-visible{background-color:rgba(162,250,75,0.12)}
+.about-toggle-label{position:relative;display:inline-block}
+.about-toggle-label::after{content:none}
+.about-toggle:hover .about-toggle-label::after,.about-toggle:focus-visible .about-toggle-label::after{width:100%}
+@media (prefers-reduced-motion: reduce){.about-toggle-label::after{animation:none;transition:none}}
+.about-toggle:focus-visible{outline:2px solid #356506;outline-offset:2px}
+.about-photo{height:0;opacity:0;clip-path:inset(0 0 100% 0);transition:height 560ms cubic-bezier(.22,.8,.25,1),margin 560ms cubic-bezier(.22,.8,.25,1),opacity 360ms ease,clip-path 620ms cubic-bezier(.22,.8,.25,1)}
+.about-photo.is-open{height:174px;opacity:1;clip-path:inset(0 0 0 0);transition:height 560ms cubic-bezier(.22,.8,.25,1),margin 560ms cubic-bezier(.22,.8,.25,1),opacity 480ms ease 100ms,clip-path 680ms cubic-bezier(.22,.8,.25,1) 60ms}
+@media (min-width: 768px){.about-photo.is-open{margin-bottom:-54px}}
+@media (prefers-reduced-motion: reduce){.about-photo,.about-photo.is-open{transition:none}}
+.page-root{animation:page-fade-in 700ms ease backwards;transition:opacity 650ms ease}
+.page-shift{animation:page-shift-in 900ms cubic-bezier(.2,.8,.2,1) backwards;transition:transform 700ms cubic-bezier(.45,0,.2,1)}
+@keyframes page-shift-in{from{transform:translateY(28px)}to{transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){.about-more,.about-more.is-open,.about-caret{transition:none}.page-shift{animation:none;transition:none}.page-root.is-leaving .page-shift{transform:none}.page-root{animation-duration:200ms;transition-duration:200ms}}
+.project-title-link{-webkit-user-drag:none;text-decoration:none;padding-bottom:9px;background-image:linear-gradient(rgba(162,250,75,0.25),rgba(162,250,75,0.25));background-repeat:no-repeat;background-position:0 0;background-size:0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 560ms cubic-bezier(.22,.8,.25,1)}
+.project-title-link:hover,.project-title-link:focus-visible,.project-card:has(.project-cover:hover) .project-title-link,.project-card:has(.project-cover:focus-visible) .project-title-link{background-size:100% 100%}
+.project-title-link:focus-visible,.project-cover:focus-visible{outline:2px solid #356506;outline-offset:4px}
+.project-cover{-webkit-user-drag:none;box-shadow:-2px 18px 32px rgba(0,0,0,0),0 2px 12px rgba(0,0,0,0);transform:translateY(0);transition:transform 520ms cubic-bezier(.22,.8,.25,1),box-shadow 520ms cubic-bezier(.22,.8,.25,1)}
+.project-cover:hover,.project-cover:focus-visible,.project-card:has(.project-title-link:hover) .project-cover,.project-card:has(.project-title-link:focus-visible) .project-cover{transform:translateY(-6px);box-shadow:-2px 18px 32px rgba(0,0,0,0.16),0 2px 12px rgba(0,0,0,0.25)}
+@media (prefers-reduced-motion: reduce){.project-cover{transition:box-shadow 300ms ease}.project-cover:hover,.project-cover:focus-visible,.project-card:has(.project-title-link:hover) .project-cover{transform:none}.project-title-link{transition:background-size 1ms}}
+.project-title{font-weight:500}
+.project-card{position:relative}
+.project-card .wave-divider{top:-43px}
+@media (prefers-reduced-motion: reduce){.sel-wave{animation:none}.project-card,.project-title{transition:none}.tc-body,.tc-wing-a,.tc-wing-b,.toucan-cursor.is-perched .tc-body{animation:none}.toucan-cursor.is-landing{transition:opacity 150ms ease}}

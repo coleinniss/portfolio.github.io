@@ -1,0 +1,34 @@
+/* Cole Inniss portfolio — fun page only */
+/* fun page */
+.fun-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.fun-chip{font:inherit;font-family:'Noto Sans',sans-serif;font-size:15px;font-weight:500;line-height:20px;color:#1A1A1A;background:transparent;border:1.5px solid #D5DBCD;border-radius:999px;padding:9px 16px;min-height:40px;cursor:pointer;transition:border-color 200ms ease,background-color 200ms ease,color 200ms ease}
+.fun-chip:hover{border-color:#356506;background:rgba(162,250,75,0.12)}
+.fun-chip.is-on{border-color:#356506;background:#356506;color:#FFFFFF}
+.fun-chip:focus-visible{outline:2px solid #356506;outline-offset:2px}
+.fun-count{font-weight:400;opacity:.65;margin-left:2px}
+.fun-grid{list-style:none;margin:40px 0 0;padding:0;columns:3 280px;column-gap:32px}
+.fun-item{break-inside:avoid;margin:0 0 40px;animation:fun-in 520ms cubic-bezier(.2,.8,.2,1) both}
+@keyframes fun-in{from{opacity:0;transform:translateY(14px)}}
+.fun-tile{width:100%;background:#356506;display:flex;align-items:center;justify-content:center;transition:transform 420ms cubic-bezier(.2,.8,.2,1),box-shadow 420ms cubic-bezier(.2,.8,.2,1)}
+.fun-item:hover .fun-tile{transform:translateY(-6px);box-shadow:-2px 18px 32px rgba(0,0,0,0.16)}
+.fun-ph{font-family:'Noto Sans Display','Noto Sans',sans-serif;font-weight:500;font-size:14px;color:#E8F2DC}
+.fun-cap{display:flex;flex-direction:column;gap:4px;margin-top:16px}
+.fun-title{font-family:'Noto Sans',sans-serif;font-weight:500;font-size:15px;line-height:27px;color:#1A1A1A}
+.fun-desc{font-size:15px;line-height:24px;color:#4A4A4A}
+.fun-tag{align-self:flex-start;margin-top:6px;font-size:12px;line-height:16px;font-weight:500;color:#356506;background:rgba(162,250,75,0.25);border-radius:999px;padding:3px 10px}
+@media (prefers-reduced-motion: reduce){.fun-item{animation:none}.fun-tile{transition:none}.fun-item:hover .fun-tile{transform:none}}
+.wave-rule{position:relative}
+.wave-rule .wave-divider{top:-3px}
+.hl{background-color:rgba(162,250,75,0.25);padding-bottom:9px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@keyframes hl-wave{from{background-position:0 100%}to{background-position:40px 100%}}
+.title-sweep{-webkit-user-drag:none;text-decoration:none;padding-bottom:9px;background-image:linear-gradient(rgba(162,250,75,0.25),rgba(162,250,75,0.25));background-repeat:no-repeat;background-position:0 0;background-size:0% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 560ms cubic-bezier(.22,.8,.25,1)}
+.title-sweep:hover,.title-sweep:focus-visible{background-size:100% 100%;color:#1A1A1A}
+.title-sweep:focus-visible{outline:2px solid #356506;outline-offset:4px}
+@media (prefers-reduced-motion: reduce){.hl{animation:none}.title-sweep{transition:none}}
+.page-root{animation:page-fade-in 800ms ease backwards;transition:opacity 650ms ease}
+.page-shift{animation:page-shift-in 1000ms cubic-bezier(.2,.8,.2,1) backwards;transition:transform 700ms cubic-bezier(.45,0,.2,1)}
+main.page-shift{animation-delay:90ms}
+footer.page-shift{animation-delay:160ms}
+@keyframes page-shift-in{from{transform:translateY(32px)}to{transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){.page-shift{animation:none;transition:none}.page-root.is-leaving .page-shift{transform:none}.page-root{animation-duration:200ms;transition-duration:200ms}}
+@media (prefers-reduced-motion: reduce){.sel-wave{animation:none}.tc-body,.tc-wing-a,.tc-wing-b,.toucan-cursor.is-perched .tc-body{animation:none}.toucan-cursor.is-landing{transition:opacity 150ms ease}}
